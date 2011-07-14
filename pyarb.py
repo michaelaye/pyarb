@@ -150,6 +150,7 @@ class Converter ( HasPrivateTraits ):
         if not os.path.isdir(new):
             self._feedback("Somehow this is not a directory. Try again.")
             return
+        os.chdir(new)
         self._update_choices()
         self._feedback("Set directory to: {0}, found {1} entries".format(new,
             len(self.choices)))
